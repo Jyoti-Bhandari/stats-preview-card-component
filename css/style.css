@@ -1,0 +1,195 @@
+/* font families details */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Lexend+Deca:wght@100..900&display=swap');
+
+/* global details css */
+:root {
+    /* (main background) */
+    --Very-dark-blue: hsl(233, 47%, 7%);
+    /* (card background) */
+    --dark-desaturated-blue: hsl(244, 38%, 16%);
+    /* (accent) */
+    --soft-violet-span: rgba(83, 0, 138);
+    --soft-violet: rgba(83, 0, 138, 0.5);
+
+    /* (main heading, stats) */
+    --white: hsl(0, 0%, 100%);
+    /* (main paragraph) */
+    --slightly-transparent-white-1: hsla(0, 0%, 100%, 0.75);
+    /* (stat headings) */
+    --slightly-transparent-white-2: hsla(0, 0%, 100%, 0.6);
+
+    /* font families details */
+    --primary-ff-family: "Inter", sans-serif;
+    --secondary-ff-family: "Lexend Deca", sans-serif;
+    --font-size-16: 16px;
+    --weight-primary-700: 700;
+    --weight-secondary-400: 400;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1;
+}
+
+body {
+    background-color: var(--Very-dark-blue);
+    font-family: var(--primary-ff-family);
+    font-size: var(--font-size-16);
+}
+
+main{
+    /* margin: 100px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    background-color: var(--dark-desaturated-blue);
+    border-radius: 10px;
+}
+
+.container .top-inner-container{
+    width: 100%;
+    position: relative;
+}
+
+.container .top-inner-container img{
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.container .top-inner-container div{
+    position: absolute;
+    top: 0px;
+    background-color: var(--soft-violet);
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    opacity: 1;
+}
+
+.container .bottom-inner-container{
+    padding: 40px 90px 40px 40px;
+}
+
+.container .bottom-inner-container h1{
+    color: var(--white);
+    font-weight: var(--weight-primary-700);
+    font-size: 34px;
+    padding-bottom: 30px;
+}
+
+.container .bottom-inner-container h1 span{
+    color: var(--soft-violet-span);
+    font-weight: var(--weight-primary-700);
+    font-size: 34px;
+}
+
+.container .bottom-inner-container .main-para{
+    color: var(--slightly-transparent-white-1);
+    padding-bottom: 40px;
+}
+
+.container .bottom-inner-container .bottom-data{
+    display: flex;
+    justify-content: space-between;
+    /* text-align: center; */
+}
+
+.bottom-data .card .color-white{
+    color: var(--white);
+    padding-bottom: 10px;
+    font-size: 24px;
+    font-weight: var(--weight-primary-700);
+}
+
+.bottom-data .card .color-0ff-white{
+    color: var(--slightly-transparent-white-2);
+    font-size: 14px;
+    font-weight: var(--weight-secondary-400);
+    text-transform: uppercase;
+}
+
+/* footer css */
+.attribution {
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    padding: 8px;
+    background-color: #000;
+    letter-spacing: 2px;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+
+/* media query */
+@media (max-width:900px){
+    main{
+        margin: 0px 30px;
+        width: 90%;
+        height: auto;
+        margin: 2rem auto;
+    }
+    .container{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .container .bottom-inner-container{
+        padding: 20px;
+    }
+
+    .container .top-inner-container img{
+        content: url(../images/image-header-mobile.jpg);
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+    }
+    
+    .container .top-inner-container div{
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+
+    }
+
+    .container .bottom-inner-container .bottom-data{
+        /* align-items: center; */
+        flex-direction: column;
+    }
+
+    .bottom-data .card .color-0ff-white{
+        padding-bottom: 20px;
+    }
+}
